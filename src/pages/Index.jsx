@@ -1,18 +1,36 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, VStack, Box, Text, Input, Textarea, Button, Flex, Heading } from "@chakra-ui/react";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.lg" p={4}>
+      {/* Navigation Bar */}
+      <Box as="nav" bg="blue.500" color="white" p={4} mb={4} borderRadius="md">
+        <Heading size="lg">Public Post Board</Heading>
+      </Box>
+
+      {/* Main Section */}
+      <Box as="main" flex="1" mb={4}>
+        <VStack spacing={4} align="stretch">
+          {/* Example Post */}
+          <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="sm">
+            <Text fontWeight="bold">User1</Text>
+            <Text mt={2}>This is an example post content.</Text>
+          </Box>
+          <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="sm">
+            <Text fontWeight="bold">User2</Text>
+            <Text mt={2}>Another example post content.</Text>
+          </Box>
+        </VStack>
+      </Box>
+
+      {/* Post Submission Form */}
+      <Box as="form" p={4} borderWidth="1px" borderRadius="md" boxShadow="sm">
+        <VStack spacing={4} align="stretch">
+          <Input placeholder="Your Name" />
+          <Textarea placeholder="Your Post" />
+          <Button colorScheme="blue">Submit</Button>
+        </VStack>
+      </Box>
     </Container>
   );
 };
